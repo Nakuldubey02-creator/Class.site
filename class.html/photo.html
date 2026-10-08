@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edible Coffee Cup - Media Gallery</title>
+  <style>
+    :root {
+      --primary: #5c4033;
+      --accent: #d2b48c;
+      --dark: #1e1412;
+      --light: #faf7f5;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--light);
+      padding: 40px 20px;
+    }
+
+    .gallery-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .gallery-header h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .gallery-header p {
+      color: #bfaea7;
+      font-size: 1.1rem;
+    }
+
+    /* Main Featured Media Stage */
+    .featured-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #120b0a;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      border: 1px solid rgba(210, 180, 140, 0.2);
+    }
+
+    .featured-stage video, 
+    .featured-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Floating Media Feature Info Overlay */
+    .media-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      padding: 30px;
+      pointer-events: none;
+    }
+
+    .media-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--dark);
+      padding: 4px 12px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .media-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* Thumbnail Reel Layout */
+    .thumbnail-reel {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .thumb-card {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: calc(var(--radius) / 2);
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: #120b0a;
+    }
+
+    .thumb-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(210, 180, 140, 0.5);
+    }
+
+    .thumb-card.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(210, 180, 140, 0.3);
+    }
+
+    .thumb-card video,
+    .thumb-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .thumb-card:hover video,
+    .thumb-card:hover img,
+    .thumb-card.active video,
+    .thumb-card.active img {
+      opacity: 1;
+    }
+
+    /* Video Indicator Badge */
+    .play-indicator {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 768px) {
+      .thumbnail-reel {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-header h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h2>Experience The Crunch</h2>
+      <p>Click below to see our leak-proof biscuit cups in action.</p>
+    </div>
+
+    <!-- Main Active Display -->
+    <div class="featured-stage">
+      <!-- Media dynamically injected via JavaScript -->
+      <video id="main-media" src="coffee.mp4" autoplay loop muted playsinline></video>
+      <div class="media-overlay">
+        <span class="media-badge" id="media-type">Video</span>
+        <div class="media-title" id="media-caption">100% Leak-Proof for Up to 40 Minutes</div>
+      </div>
+    </div>
+
+    <!-- Interactive Navigation Gallery -->
+    <div class="thumbnail-reel">
+      <!-- Item 1 (Active) -->
+      <div class="thumb-card active" onclick="switchMedia(this, 'video', 'https://mixkit.co', '100% Leak-Proof for Up to 40 Minutes')">
+        <div class="play-indicator">▶</div>
+        <video src="https://mixkit.co" muted loop playsinline></video>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="thumb-card" onclick="switchMedia(this, 'image', 'https://unsplash.com', 'Delicious Biscuit Base & Dark Chocolate Lining')">
+        <img src="https://unsplash.com" alt="Biscuit Cup Detail">
+      </div>
+
+      <!-- Item 3 -->
+      <div class="thumb-card" onclick="switchMedia(this, 'video', 'https://mixkit.co', 'Perfect Heat Retention with Zero Sogginess')">
+        <div class="play-indicator">▶</div>
+        <video src="https://mixkit.co" muted loop playsinline></video>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="thumb-card" onclick="switchMedia(this, 'image', 'https://unsplash.com', 'Zero Waste. Sip Your Coffee, Eat Your Cup!')">
+        <img src="https://unsplash.com" alt="Sustainable Coffee Cup">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchMedia(card, type, src, caption) {
+      // Manage Active States
+      document.querySelectorAll('.thumb-card').forEach(el => el.classList.remove('active'));
+      card.classList.add('active');
+
+      const stage = document.querySelector('.featured-stage');
+      const oldMedia = document.getElementById('main-media');
+      const badge = document.getElementById('media-type');
+      const captionText = document.getElementById('media-caption');
+
+      // Update Text Layers
+      badge.textContent = type;
+      captionText.textContent = caption;
+
+      // Replace Media Element Node smoothly
+      let newMedia;
+      if (type === 'video') {
+        newMedia = document.createElement('video');
+        newMedia.src = src;
+        newMedia.autoplay = true;
+        newMedia.loop = true;
+        newMedia.muted = true;
+        newMedia.setAttribute('playsinline', '');
+      } else {
+        newMedia = document.createElement('img');
+        newMedia.src = src;
+      }
+
+      newMedia.id = 'main-media';
+      stage.replaceChild(newMedia, oldMedia);
+    }
+  </script>
+</body>
+</html>

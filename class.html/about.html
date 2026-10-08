@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Edible Coffee Cups</title>
+    <style>
+        :root {
+            --primary: #4A3525;
+            --secondary: #B07D62;
+            --light-bg: #fdfbf7;
+            --text: #2b2b2b;
+            --accent: #e6dfd3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #fafafa;
+            padding: 40px 20px;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #ffffff;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .story-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .story-section p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Feature Cards */
+        .features-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--accent);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Specs Bar */
+        .specs-bar {
+            background: var(--accent);
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .spec-item h4 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .spec-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #555;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Deliciously Sustainable</h1>
+            <p>Rethinking the way we drink coffee. No plastic, no paper, zero waste—just pure taste.</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="content-grid">
+            <div class="story-section">
+                <h2>Our Mission</h2>
+                <p>Millions of disposable coffee cups end up in landfills every single day. We set out to change that by creating a cup that doesn't just disappear—it tastes good too.</p>
+                <p>Our edible coffee cups are engineered from 100% natural, vegan ingredients. They offer a sturdy, crunchy, and delicious alternative to single-use plastics without altering the authentic flavor profile of your brew.</p>
+            </div>
+
+            <div class="features-section">
+                <div class="feature-card">
+                    <h3>☕ 40-Min Hot Resistance</h3>
+                    <p>Stays perfectly crisp and leak-proof while you enjoy your hot coffee or tea.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌱 100% Vegan & Natural</h3>
+                    <p>Made entirely from grain-based ingredients. Free from artificial preservatives.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🍪 Delicious Flavours</h3>
+                    <p>Available in subtle Vanilla, Rich Chocolate, or Classic Neutral to match your drink.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌍 Zero Waste Footprint</h3>
+                    <p>If you choose not to eat it, it fully biodegrades naturally within just 2 weeks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Specs Banner -->
+        <section class="specs-bar">
+            <div class="spec-item">
+                <h4>85°C</h4>
+                <p>Max Heat Limit</p>
+            </div>
+            <div class="spec-item">
+                <h4>100%</h4>
+                <p>Biodegradable</p>
+            </div>
+            <div class="spec-item">
+                <h4>0%</h4>
+                <p>Paper or Plastic</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

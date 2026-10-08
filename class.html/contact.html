@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bite Edible  Cups</title>
+    <style>
+        :root {
+            --primary-color: #6F4E37; /* Coffee brown */
+            --secondary-color: #E6CCB2; /* Biscuit/Wafer tan */
+            --accent-color: #76BA99; /* Eco green */
+            --text-dark: #4d2121;
+            --text-light: #FFFFFF;
+            --bg-light: #FDFBF7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(111, 78, 55, 0.08);
+            border: 1px solid rgba(230, 204, 178, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .card .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #563c2a;
+        }
+
+        .btn-secondary {
+            background-color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #54d197;
+        }
+
+        /* Quick Contact Form Style */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Get in Touch with EcoBite Cups</h1>
+            <p>Have questions about our delicious, zero-waste edible coffee cups? Reach out to us!</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Option 1: Customer Helpline -->
+            <div class="card">
+                <h2>Customer Helpline</h2>
+                <p>Need immediate assistance with an order, or looking to partner with your cafe?</p>
+                <p><span class="highlight">Toll-Free:</span> (100) (108) (1-800-326-2483)</p>
+                <p><span class="highlight">International:</span> +1 (555) 234-5678</p>
+                <p><span class="highlight">Hours:</span> Monday – Friday, 8:00 AM – 6:00 PM EST</p>
+                <a href="tel:18003262483" class="btn">Call Helpline Now</a>
+            </div>
+
+            <!-- Option 2: Corporate Headquarters -->
+            <div class="card">
+                <h2>Global Headquarters</h2>
+                <p>For corporate inquiries, investment opportunities, and mail correspondence.</p>
+                <p><span class="highlight">EcoBite Technologies Inc.</span></p>
+                <p>456 Sustainable Way, Suite 100</p>
+                <p>G H Raisoni 2nd floor Block number 202</p>
+                <p><span class="highlight">Email:</span> HQ@ecobitecups.com</p>
+                <a href="https://google.com" target="_blank" class="btn btn-secondary">Open in Google Maps</a>
+            </div>
+
+            <!-- Option 3: Wholesale & Custom Orders Form -->
+            <div class="card">
+                <h2>Wholesale &amp; Custom Inquiries</h2>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
+                    <div class="form-group">
+                        <label for="name">Cafe / Business Name</label>
+                        <input type="text" id="name" required placeholder="e.g. Daily Grind Cafe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" required placeholder="name@business.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Estimated Monthly Volume</label>
+                        <textarea id="message" required placeholder="Tell us how many edible cups you need or ask us a question..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
